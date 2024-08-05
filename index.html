@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:'Poppins',sans-serif;
+            box-sizing: border-box
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh ;
+            /* background: rgb(241, 197, 221); */
+            /* background: rgb(139, 146, 181); */
+            /* background: black; */
+            /* background: linear-gradient(45deg,#08001f,#555c9f); */
+            background: #A0AECD;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .product{
+            width: 90%;
+            max-width: 750px;
+            display: flex;
+        }
+        .left{
+            flex-basis: 47%;
+            /* background: rgb(129, 137, 175); */
+            /* background: rgba(126, 126, 125, 0.634); */
+            background: black;
+            transform: scale(1.08);
+            box-shadow: -10px 5px 10px 10px rgba(0,0,0,0.1);
+            /*i don't know why i am getting the error light border around this*/
+        }
+        .left img{
+            width: 100%;
+            display: block;
+            padding-top: 100px;
+        }
+        .right{
+            flex-basis: 53%;
+            background: white;
+            padding: 40px;
+            padding-left: 60px;
+            box-shadow: -10px 5px 10px 10px rgba(0,0,0,0.1); 
+            /*i don't know why i am getting the error light border around this*/
+            color: #777;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .right h1{
+            color: #333;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        .right h2{
+            color: #555;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .right h3{
+            color: red;
+            margin-bottom: 20px;
+        }
+        .right form{
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .select_size{
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .select_size p{
+            width: 70px;
+        }
+        .select_size input:checked + span{
+            color: rgb(207, 45, 101);
+            font-weight: 800;
+        }
+        .select_size input{
+            display: none;
+        }
+        .select_size span{
+            padding: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .color-select{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .color-select p{
+            width: 75px;
+        }
+        .color-select span{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;  
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .color-1{
+            background: rgb(240, 238, 222);
+        }
+        .color-2{
+            background: red;
+        }
+        .color-3{
+            background: rgb(131, 214, 131);
+        }
+        .color-4{
+            background: pink;
+        }
+        .color-select input{
+            display: none;
+        }
+        .color-select input:checked + span{
+            transform: scale(0.7);
+            box-shadow: 0 0 0 4px #fff, 0 0 0 6px #000;
+        }
+        .quantity-select{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .quantity-select p{
+            width: 75px;
+        }
+        .quantity-select input{
+            background: #eee;
+            border: 0;
+            outline: 0;
+            padding: 2px 2px 2px 10px;
+            width: 50px;
+            border-radius: 12px;
+        }
+        form button{
+            background: #553ff0;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border-radius: 30px;
+            border: 0;
+            outline: 0;
+            margin-top: 50px;
+            cursor: pointer;  
+        }
+        .btn{
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 10px;
+            cursor: pointer;
+        }
+        .btn.active{
+            background: #553ff0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="left">
+                <img src="img1.png" id="productImg">
+                <div class="contols">
+                    <span class="btn active"></span>
+                    <span class="btn"></span>
+                    <span class="btn"></span>
+                </div>
+            </div>
+            <div class="right">
+                <h1>Casual T-Shirt</h1>
+                <h2>₹389</h2>
+                <h3>30% OFF</h3>
+                <p>Tribal Printed Oversized Cotton T-shirt</p>
+                <form>
+                    <div class="select_size">
+                        <p>Size:</p>
+                        <label for="small">
+                            <input type="radio" name="size" id="small">
+                            <span>S</span>
+                        </label>
+
+                        <label for="medium">
+                            <input type="radio" name="size" id="medium">
+                            <span>M</span>
+                        </label>
+
+                        <label for="large">
+                            <input type="radio" name="size" id="large">
+                            <span>L</span>
+                        </label>
+
+                        <label for="xl">
+                            <input type="radio" name="size" id="xl">
+                            <span>XL</span>
+                        </label>
+
+                        <label for="xxl">
+                            <input type="radio" name="size" id="xxl">
+                            <span>XXL</span>
+                        </label>
+                    </div>
+
+                    <div class="color-select">
+                        <p>Color:</p>
+
+                        <label for="cream">
+                            <input type="radio" name="color" id="cream">
+                            <span class="color-1"></span>
+                        </label>
+                        
+                        <label for="red">
+                            <input type="radio" name="color" id="red">
+                            <span class="color-2"></span>
+                        </label>
+
+                        <label for="green">
+                            <input type="radio" name="color" id="green">
+                            <span class="color-3"></span>
+                        </label>    
+
+                        <label for="pink">
+                            <input type="radio" name="color" id="pink">
+                            <span class="color-4"></span>
+                        </label>
+                    </div>
+                    <div class="quantity-select">
+                        <p>Quantity</p>
+                        <input type="number" value="1">
+                    </div>
+                    <button>Buy Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let productImg = document.getElementById("productImg");
+        let btn = document.getElementsByClassName("btn");
+
+        btn[0].onclick = function()
+        {
+            productImg.src = "img1.png";
+
+            for(bt of btn){
+                bt.classList.remove("active");
+            }
+            this.classList.add("active");
+        }
+        btn[1].onclick = function()
+        {
+            productImg.src = "img3.png";
+            for(bt of btn){
+                bt.classList.remove("active");
+            }
+            this.classList.add("active");
+        }
+        btn[2].onclick = function()
+        {
+            productImg.src = "img2.png";
+            for(bt of btn){
+                bt.classList.remove("active");
+            }
+            this.classList.add("active");
+        }
+    </script>
+</body>
+</html>
